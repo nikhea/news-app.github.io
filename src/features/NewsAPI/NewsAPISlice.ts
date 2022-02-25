@@ -1,10 +1,9 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface NewsAPIResavation {
   news: string[];
   loading: boolean;
   success: boolean;
-  errormessage: null;
+  errormessage?: null | any;
 }
 const initialState: NewsAPIResavation = {
   news: [],
@@ -17,14 +16,26 @@ export const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
-    reset: (state, action: PayloadAction<string>) => {
+    reset: (state, action: PayloadAction<string>) => initialState,
+    loadNews(state) {
+      state.loading = true;
       state.errormessage = null;
-      state.success = false;
+    },
+    loadNewsError(state, action) {
       state.loading = false;
+      state.success = false;
+      state.errormessage = action.payload;
+    },
+    loadNewsSuccess(state, action) {
+      state.loading = false;
+      state.success = true;
+      state.errormessage = null;
+      state.news = action.payload
+      
     },
   },
-  extraReducers: () => {},
 });
-export const { reset } = newsSlice.actions;
+export const { reset, loadNewsSuccess, loadNewsError, loadNews } =
+  newsSlice.actions;
 
 export default newsSlice.reducer;

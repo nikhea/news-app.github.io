@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import newsSlice from "./NewsAPI/NewsAPISlice"
 
 const rootReducer = combineReducers({
-    newsSlice
+    news:newsSlice
 });
 
 export default rootReducer;
