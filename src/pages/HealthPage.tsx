@@ -1,8 +1,9 @@
 import React from "react";
+import HealthNews from "../container/HealthNews";
 const HealthPage = () => {
   return (
     <>
-    <h1>HealthPage</h1>
+    <HealthNews/>
     </>
   );
 };

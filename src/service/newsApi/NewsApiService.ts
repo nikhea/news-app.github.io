@@ -29,8 +29,6 @@ export function fetchTechData() {
     try {
       const response = await axios.get(`${url.tech}`);
       const data = await response.data;
-      console.log("jdsdh", data.articles[0].title);
-      console.log("jdsdh", data.articles);
       dispatch(loadNewsSuccess(data.articles));
     } catch (error) {
       console.log("error", error);
@@ -44,8 +42,21 @@ export function fetchBusinessData() {
     try {
       const response = await axios.get(`${url.business}`);
       const data = await response.data;
-      console.log("jdsdh", data.articles[0].title);
-      console.log("jdsdh", data.articles);
+      dispatch(loadNewsSuccess(data.articles));
+    } catch (error) {
+      console.log("error", error);
+      dispatch(loadNewsError(error));
+    }
+  };
+}
+
+
+export function fetchHealthsData() {
+  return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
+    dispatch(loadNews());
+    try {
+      const response = await axios.get(`${url.health}`);
+      const data = await response.data;
       dispatch(loadNewsSuccess(data.articles));
     } catch (error) {
       console.log("error", error);
