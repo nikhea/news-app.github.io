@@ -64,5 +64,17 @@ export function fetchHealthsData() {
     }
   };
 }
-
+export function fetchPoliticsData() {
+  return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
+    dispatch(loadNews());
+    try {
+      const response = await axios.get(`${url.politics}`);
+      const data = await response.data;
+      dispatch(loadNewsSuccess(data.articles));
+    } catch (error) {
+      console.log("error", error);
+      dispatch(loadNewsError(error));
+    }
+  };
+}
 console.log("data :golbal");

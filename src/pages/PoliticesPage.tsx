@@ -1,8 +1,9 @@
 import React from "react";
+import PoliticsNews from "../container/PoliticsNews";
 const PoliticesPage = () => {
   return (
     <>
-    <h1>PoliticesPage</h1>
+    <PoliticsNews />
     </>
   );
 };
