@@ -1,15 +1,20 @@
+import { FC } from "react";
 import { ThemeProvider } from "styled-components";
-import { theme, GlobalStyle } from "./components/styles/Global";
+import { theme, GlobalStyle } from "./components/styles/Global.style";
 import "./App.css";
-import News from "./container/News";
-function App() {
+import Header from "./layouts/Header";
+import { Routs } from "./Routs";
+import Slider from "./components/UI/Slider"
+const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <News/>
+        <Header />
+        <Slider/>
+        <Routs />
       </>
     </ThemeProvider>
   );
-}
+};
 export default App;

@@ -15,7 +15,7 @@ export function fetchData() {
     try {
       const response = await axios.get(`${API}`);
       const data = await response.data;
-      // console.log("jdsdh", data.articles[0].title);
+      console.log("jdsdh", data.articles[0].title);
       console.log("jdsdh", data.articles);
 
       dispatch(loadNewsSuccess(data.articles));

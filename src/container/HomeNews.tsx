@@ -16,7 +16,6 @@ const News = () => {
   ));
   return (
     <div>
-      News
       <>{renderNews}</>
     </div>
   );
