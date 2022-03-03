@@ -1,19 +1,16 @@
-
 import axios from "axios";
 import {
   loadNewsError,
   loadNews,
   loadNewsSuccess,
 } from "../../features/NewsAPI/NewsAPISlice";
-
-// const API = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.REACT_API_KEY}`;
-const API ="https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=2eab312599424811b5e1807b3d859a40";
+import { url } from "./URLS";
 
 export function fetchData() {
   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
     dispatch(loadNews());
     try {
-      const response = await axios.get(`${API}`);
+      const response = await axios.get(`${url.Golbal}`);
       const data = await response.data;
       console.log("jdsdh", data.articles[0].title);
       console.log("jdsdh", data.articles);
@@ -25,6 +22,21 @@ export function fetchData() {
     }
   };
 }
-// console.log("ress", response.data.articles);
+
+export function fetchTechData() {
+  return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
+    dispatch(loadNews());
+    try {
+      const response = await axios.get(`${url.tech}`);
+      const data = await response.data;
+      console.log("jdsdh", data.articles[0].title);
+      console.log("jdsdh", data.articles);
+      dispatch(loadNewsSuccess(data.articles));
+    } catch (error) {
+      console.log("error", error);
+      dispatch(loadNewsError(error));
+    }
+  };
+}
 
 console.log("data :golbal");

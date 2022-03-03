@@ -1,8 +1,10 @@
 import React from "react";
+import TechNews from "../container/TechNews";
+
 const TechPage = () => {
   return (
     <>
-    <h1>TechPage</h1>
+  <TechNews/>
     </>
   );
 };
