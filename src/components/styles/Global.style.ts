@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
    }
    html{
     font-size: 16px;
-    overflow:hidden;
+    overflow-x:hidden;
 
    }
    img{
@@ -28,7 +28,9 @@ export const GlobalStyle = createGlobalStyle`
    `;
 
 export const theme = {
-    media:{
-     mobilescreen:'768px'
-    }
+  media: {
+    xs: "768px",
+    sm: "900px",
+    tabletScreen: "1024px",
+  },
 };

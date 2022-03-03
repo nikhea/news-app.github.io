@@ -22,14 +22,12 @@ export const NavUnList = Styled.ul`
    list-style-item: none;
    text-transform:capitalize;
    margin:1em 0;
-   @media(max-width:${theme.media.mobilescreen}) {
+   @media(max-width:${theme.media.xs}) {
     display:none;
   }
   
 `;
 
 export const StyledLink = Styled(Link)`
-color:#3e3e3e;
-
-    
+color:#3e3e3e;    
 `;

@@ -13,7 +13,7 @@ max-height: 530%;
 // object-fit:scale-down;
 // opacity:0.4;
 
-@media(max-width:${theme.media.mobilescreen}) {
+@media(max-width:${theme.media.xs}) {
     height:300px;
     max-height: 330%;
 }
