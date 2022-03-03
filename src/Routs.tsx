@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 import TechPage from "./pages/Techpage";
 import HealthPage from "./pages/HealthPage";
 import Header from "./layouts/Header";
-import CelebritiesPage from "./pages/CelebritiesPage";
+import BusinessPage from "./pages/BusinessPage";
 import PoliticesPage from "./pages/PoliticesPage";
 export const Routs = () => {
   const mainRoutes = {
@@ -13,7 +13,7 @@ export const Routs = () => {
       { path: "/", element: <HomePage /> },
       { path: "tech", element: <TechPage /> },
       { path: "health", element: <HealthPage /> },
-      { path: "celebrity", element: <CelebritiesPage /> },
+      { path: "business", element: <BusinessPage /> },
       { path: "politic", element: <PoliticesPage /> },
       { path: "*", element: <Navigate to="/" /> },
     ],

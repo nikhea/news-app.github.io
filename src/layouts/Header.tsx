@@ -36,7 +36,7 @@ const Header: FC<Props> = () => {
                 <StyledLink to="/health">health</StyledLink>
               </li>
               <li>
-                <StyledLink to="/celebrity">celebrity</StyledLink>
+                <StyledLink to="/business">Business</StyledLink>
               </li>
             </Flex>
           </NavUnList>
