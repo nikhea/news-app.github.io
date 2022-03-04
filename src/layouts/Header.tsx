@@ -38,6 +38,9 @@ const Header: FC<Props> = () => {
               <li>
                 <StyledLink to="/business">Business</StyledLink>
               </li>
+              <li>
+                <StyledLink to="/cryptocurrency">cryptocurrency</StyledLink>
+              </li>
             </Flex>
           </NavUnList>
           {/* <Humbuger/> */}

@@ -77,4 +77,17 @@ export function fetchPoliticsData() {
     }
   };
 }
+export function fetchCyptosData() {
+  return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
+    dispatch(loadNews());
+    try {
+      const response = await axios.get(`${url.crypto}`);
+      const data = await response.data;
+      dispatch(loadNewsSuccess(data.articles));
+    } catch (error) {
+      console.log("error", error);
+      dispatch(loadNewsError(error));
+    }
+  };
+}
 console.log("data :golbal");

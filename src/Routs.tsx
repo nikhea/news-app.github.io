@@ -5,6 +5,7 @@ import HealthPage from "./pages/HealthPage";
 import Header from "./layouts/Header";
 import BusinessPage from "./pages/BusinessPage";
 import PoliticesPage from "./pages/PoliticesPage";
+import { CyptoPage } from "./pages/CyptoPage";
 export const Routs = () => {
   const mainRoutes = {
     path: "/",
@@ -15,6 +16,7 @@ export const Routs = () => {
       { path: "health", element: <HealthPage /> },
       { path: "business", element: <BusinessPage /> },
       { path: "politic", element: <PoliticesPage /> },
+      { path: "cryptocurrency", element: <CyptoPage /> },
       { path: "*", element: <Navigate to="/" /> },
     ],
   };
